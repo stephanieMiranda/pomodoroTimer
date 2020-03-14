@@ -36,17 +36,17 @@
                //console.log(fullRepos[i].name);
            }
            dropDown.innerHTML = option;
+
+           //get the pomodoro counting in seconds
+           var timer = document.getElementById("study").innerHTML.valueOf(option);
+           console.log("In getStudy: " + timer);
+           //pomodoro(timer);
      }
 
      /** Onclick action, if BREAK chosen */
      function getBreak(){
           console.log(times + "\n" + times.length);
           var option = "";
-          /*var work = stdy;
-          var chill = brk;
-          var timer = work + chill;*/
-          //get the pomodoro counting in seconds
-          //pomodoro(timer);
 
           //This is the DOM manipulation
           var dropDown = document.getElementById("break");
@@ -56,10 +56,22 @@
                //console.log(fullRepos[i].name);
            }
            dropDown.innerHTML = option;
+
+           //get the pomodoro counting in seconds
+           var timer = document.getElementById("break").innerHTML.valueOf(option);
+           console.log("In getBreak: " + timer)
+           //pomodoro(timer);
      }
 
      /*A funciton that counts to the seconds with a minute for each minute passed*/
      function pomodoro(mins) {
+          //the selected item
+          var std = document.getElementById("study").innerHTML;
+          var brk = document.getElementById("break").innerHTML;
+          console.log("In pomodoro stdy: " + std);
+          console.log("break: " + brk);
+          console.log("mins: " + Object.keys(mins));
+
           //each second
           let seconds = mins * 60 || 0;
           interval = setInterval(function() {
@@ -70,6 +82,18 @@
                     document.getElementById("frame").setAttribute("clock", );
                }
           }, 1000)
+     }
+
+     function getStart(){
+          var std = document.getElementById("study").childNodes;
+          var brk = document.getElementById("break").childNodes;
+          var opt = document.getElementsByTagName("option");
+
+          //These would be defualt times of 25 stdy and 5 brk
+          //console.log("IN START \nstdy: " + std[0].value);
+          //console.log("break: " + brk[0].value);
+          console.log("opt: " + Object.values(mins));
+          pomodoro(std);
      }
 
 

@@ -26,10 +26,10 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Custom Settings</a></li>
-            <li><a href="#">Contact</a></li>
             <li><a href="#page-bottom">Bottom</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Custom Settings</a></li>
+            <li><a href="#">About</a></li>
         </ul>
     </nav>
 
@@ -50,10 +50,12 @@
                <select id="study" value="0" type="submit" onclick='getStudy()'>
                     <option>STUDY TIME</option></select>
                <select id="break" value="1" type="submit" onclick='getBreak()'><option>BREAK TIME</option></select>
-               <button id="changeFrame" value="2" type="submit" onclick='getFrames()'>START</button>
-               <button id="changeFrame" value="2" type="submit" onclick='getFrames()'>STOP</button>
-               <button id="changeFrame" value="2" type="submit" onclick='getFrames()'>CHANGE FRAME</button>
-               <button id="custom" value="3" type="submit" onclick='getCust()'>CUSTOMIZE</button>
+               <button id="start" value="2" type="submit" onclick='getStart()'>START</button>
+               <button id="stop" value="3" type="submit" onclick='getStop()'>STOP</button>
+               <!-- TODO 3/14: 
+               <button id="changeFrame" value="4" type="submit" onclick='getFrames()'>CHANGE FRAME</button>
+               <button id="custom" value="5" type="submit" onclick='getCust()'>CUSTOMIZE</button>
+               -->
           </span>
         </secton>
 
