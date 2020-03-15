@@ -64,26 +64,53 @@
      }
 
      /*A funciton that counts to the seconds with a minute for each minute passed*/
-     function pomodoro(mins) {
+     function pomodoro(study, brk) {
           //the selected item
           var std = document.getElementById("study").innerHTML;
-          var brk = document.getElementById("break").innerHTML;
-          var obj = Object.keys(mins);
+          var brake = document.getElementById("break").innerHTML;
+
+          var minutes = document.getElementById("mins");
+          var secs = document.getElementById("sec");
+
+          var top = document.getElementById("top-section");
+          var minCount = document.getElementById("count1");
+          var secCount = document.getElementById("count2");
+          var obj = Object.keys(study);
           console.log("In pomodoro stdy: " + std);
-          console.log("break: " + brk);
-          console.log("mins: " + mins); 
-          //console.log("mins: " + obj + " \n" + Object.values(mins[0].innerHTML));
+          console.log("break: " + brake);
+          console.log("study: " + study + " brk: " + brk); 
 
           //each second
-          let seconds = mins * 60;
+          let seconds = 10;//60;
           interval = setInterval(function() {
                seconds--;
-               console.log(seconds);
-               if(!seconds){
-                    clearInterval(interval);
-                    //do something with the frame, and/or switch the frame image. 
-                    //document.getElementById("frame").setAttribute("clock", );
-                    console.log(seconds);
+               let brkCounter = brk * seconds;
+               let stdCounter = study * seconds;//the minutes in hour
+               if(study != 0){
+                    if(seconds == 0){
+                         study -= 1;
+                         minCount.innerHTML = stdCounter/study;
+                         //pomodoro(study, brk);
+                    }else{
+                         minCount.innerHTML = stdCounter;
+                         secCount.innerHTML = brkCounter/brk;
+                         //pomodoro(study, brk);
+                    }
+                    //console.log(seconds);
+                    //top.innerHTML = minCount;
+                    //top.innerHTML = secCount;
+                    minutes.innerHTML = study;
+                    seconds.innerHTML = secCount;
+                    //top.appendChild(secCount);
+                    if(!seconds){
+                         clearInterval(interval);
+                         //do something with the frame, and/or switch the frame image. 
+                         //document.getElementById("frame").setAttribute("clock", );
+                         console.log(seconds);
+                         pomodoro(study, brk);
+                    }
+               }else{
+                    console.log("switch to break timer");
                }
           }, 1000)
      }
@@ -104,12 +131,14 @@
                     console.log("NOT SELECTED")
                }else{
                     stdMin = std[i].value;
-                    brkMin = brk[i].value;
-                    console.log("SELECTED: " + stdMin);
-                    console.log("SELECTED: " + brkMin);
+                    console.log("study SELECTED: " + stdMin);
+                    for(j = 0; j < brk.length; j++){
+                         brkMin = brk[i].value;
+                         console.log("break SELECTED: " + brkMin);
+                    }
                }
           }
-          pomodoro(stdMin);
+          pomodoro(stdMin, brkMin);
      }
 
 
