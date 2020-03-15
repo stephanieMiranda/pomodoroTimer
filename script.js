@@ -80,13 +80,16 @@
           console.log("study: " + study + " brk: " + brk); 
 
           //each second
-          let seconds = 11;//61;
+          let seconds = 6;//61;
           interval = setInterval(function() {
                seconds--;
                let brkCounter = brk * seconds;
                let stdCounter = study * seconds;//the minutes in hour
-               let oneHour = seconds * seconds;
+               let oneHour = 60 * 60;//one hour
                if(hour != 0){
+                    //hour = hour - oneHour;
+                    //hour -= 1;
+                    /*After 1 hour, decrement this number*/
                     if(study != 0){
                          //minutes.innerHTML = study;
                          if(seconds == 0){
@@ -108,8 +111,8 @@
                               clearInterval(interval);
                               //do something with the frame, and/or switch the frame image. 
                               //document.getElementById("frame").setAttribute("clock", );
-                              console.log(seconds);
-                              alert("You made it through the timer! Now go make one for breaks!")
+                              console.log(hour + " " + brk + " " + " " + seconds + " oneHour: " + oneHour);
+                              //alert("You made it through the timer! Now go make one for breaks!")
                               pomodoro(study, brk);
                          }
                     }else{
