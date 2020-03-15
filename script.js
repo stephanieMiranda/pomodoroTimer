@@ -73,9 +73,9 @@
           var secs = document.getElementById("sec");
 
           var top = document.getElementById("top-section");
-          var hrCount = document.getElementById("count0");
-          var minCount = document.getElementById("count1");
-          var secCount = document.getElementById("count2");
+          var hrCount = document.getElementById("count3");
+          var minCount = document.getElementById("count4");
+          var secCount = document.getElementById("count5");
           var hour = 4;
           console.log("study: " + study + " brk: " + brk); 
 
