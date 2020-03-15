@@ -63,7 +63,7 @@
            //pomodoro(timer);
      }
 
-     /*A funciton that counts to the seconds with a minute for each minute passed*/
+     /*A funciton that counts to the seconds with a minute for each minute passed. typically a 4 hour study hall is open.*/
      function pomodoro(study, brk) {
           //the selected item
           var std = document.getElementById("study").innerHTML;
@@ -73,45 +73,51 @@
           var secs = document.getElementById("sec");
 
           var top = document.getElementById("top-section");
+          var hrCount = document.getElementById("count0");
           var minCount = document.getElementById("count1");
           var secCount = document.getElementById("count2");
-          var obj = Object.keys(study);
-          console.log("In pomodoro stdy: " + std);
-          console.log("break: " + brake);
+          var hour = 4;
           console.log("study: " + study + " brk: " + brk); 
 
           //each second
-          let seconds = 10;//60;
+          let seconds = 11;//61;
           interval = setInterval(function() {
                seconds--;
                let brkCounter = brk * seconds;
                let stdCounter = study * seconds;//the minutes in hour
-               if(study != 0){
-                    if(seconds == 0){
-                         study -= 1;
-                         minCount.innerHTML = stdCounter/study;
-                         //pomodoro(study, brk);
+               let oneHour = seconds * seconds;
+               if(hour != 0){
+                    if(study != 0){
+                         //minutes.innerHTML = study;
+                         if(seconds == 0){
+                              study -= 1;
+                              //minCount.innerHTML = stdCounter/study;
+                              //pomodoro(study, brk);
+                         }else{
+                              hrCount.innerHTML = hour;
+                              minCount.innerHTML = study;
+                              secCount.innerHTML = brkCounter/brk;
+                              //pomodoro(study, brk);
+                         }
+                         //console.log(seconds);
+                         //top.innerHTML = minCount;
+                         //top.innerHTML = secCount;
+                         seconds.innerHTML = secCount;
+                         //top.appendChild(secCount);
+                         if(!seconds){
+                              clearInterval(interval);
+                              //do something with the frame, and/or switch the frame image. 
+                              //document.getElementById("frame").setAttribute("clock", );
+                              console.log(seconds);
+                              alert("You made it through the timer! Now go make one for breaks!")
+                              pomodoro(study, brk);
+                         }
                     }else{
-                         minCount.innerHTML = stdCounter;
-                         secCount.innerHTML = brkCounter/brk;
-                         //pomodoro(study, brk);
+                         console.log("switch to break timer");
                     }
-                    //console.log(seconds);
-                    //top.innerHTML = minCount;
-                    //top.innerHTML = secCount;
-                    minutes.innerHTML = study;
-                    seconds.innerHTML = secCount;
-                    //top.appendChild(secCount);
-                    if(!seconds){
-                         clearInterval(interval);
-                         //do something with the frame, and/or switch the frame image. 
-                         //document.getElementById("frame").setAttribute("clock", );
-                         console.log(seconds);
-                         pomodoro(study, brk);
-                    }
-               }else{
-                    console.log("switch to break timer");
+
                }
+               
           }, 1000)
      }
 

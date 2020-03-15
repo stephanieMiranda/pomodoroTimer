@@ -91,16 +91,17 @@ app-frame {
 }
 
 
-/**Animation for transitioning the frame theme*/
+/**Animation for transitioning the frame theme
 
 clock,
 app-frame,
 btn-grp {
     transition: all .3s ease-in-out;
 }
+*/
 
 .clock-box {
-    background-color: #537172;
+    background-color: #b0d1d1;
     text-align: center;
 }
 
@@ -122,4 +123,11 @@ btn-grp {
 #buttons {
     background-color: #80a0a0;
     text-align: center;
+    margin: 10px 0px;
+}
+
+#count1 {
+    background-color: #beebff;
+    text-align: center;
+    margin: 10px 0px;
 }
