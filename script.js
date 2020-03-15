@@ -86,14 +86,14 @@
                let brkCounter = brk * seconds;
                let stdCounter = study * seconds;//the minutes in hour
                let oneHour = 60 * 60;//one hour
-               if(hour != 0){
+               if(hour != -1){
                     //hour = hour - oneHour;
                     //hour -= 1;
                     /*After 1 hour, decrement this number*/
-                    if(study != 0){
+                    if(study != -1){
                          //minutes.innerHTML = study;
-                         if(seconds == 0){
-                              study -= 1;
+                         if(seconds == -1){
+                              //study -= 1;
                               //minCount.innerHTML = stdCounter/study;
                               //pomodoro(study, brk);
                          }else{
@@ -109,6 +109,7 @@
                          //top.appendChild(secCount);
                          if(!seconds){
                               clearInterval(interval);
+                              study -= 1;
                               //do something with the frame, and/or switch the frame image. 
                               //document.getElementById("frame").setAttribute("clock", );
                               console.log(hour + " " + brk + " " + " " + seconds + " oneHour: " + oneHour);

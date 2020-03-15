@@ -39,7 +39,7 @@ li a {
 
 li a:hover {
     background-color: #beebff;
-    color: white;
+    color: black;
 }
 
 h1 {
@@ -141,6 +141,26 @@ span {
     box-shadow: 8px 8px 8px 0px #537172;
 }
 
+#buttons.container-fluid {
+    background-color: #8ab9ff;
+    text-align: left;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0px;
+    border-radius: 4px;
+}
+
+#bott.container-fluid {
+    background-color: black;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+}
+
+#span-grp {
+    margin: 10px 20px;
+}
+
 #row {
     width: 100%;
     height: 75px;
@@ -197,14 +217,14 @@ span {
 btn-grp {
     background-color: #80a0a0;
     text-align: center;
-    margin: 10px 0px;
+    margin: 10px 15px;
     border-radius: 4px;
 }
 
 btn-grp:hover {
     background-color: #b0d1d1;
     text-align: center;
-    margin: 10px 0px;
+    margin: 10px 15px;
     border-radius: 4px;
 }
 

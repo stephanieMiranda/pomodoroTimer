@@ -51,25 +51,31 @@
                 </div>
             </section>
 
-            <secton class="btn-grp" id="choices">
-                <!-- Here we'll put a series of buttons that execute the required functions of this app.-->
-                <div id="span-grp">
-                    <select id="study" value="0" type="submit" onclick='getStudy()'><option>STUDY TIME</option></select>
-                    <select id="break" value="1" type="submit" onclick='getBreak()'><option>BREAK TIME</option></select>
-                    <button id="start" value="2" type="submit" onclick='getStart()'>START</button>
-                    <button id="stop" value="3" type="submit" onclick='getStop()'>STOP</button>
-                </div>
+            <div class="container-fluid" id="buttons">
+                <secton class="btn-grp" id="choices">
+                    <!-- Here we'll put a series of buttons that execute the required functions of this app.-->
+                    <div id="span-grp">
 
-                <!-- TODO 3/14: 
+                        <select id="study" value="0" type="submit" onclick='getStudy()'><option>STUDY TIME</option></select>
+                        <select id="break" value="1" type="submit" onclick='getBreak()'><option>BREAK TIME</option></select>
+                        <button id="start" value="2" type="submit" onclick='getStart()'>START</button>
+                        <button id="stop" value="3" type="submit" onclick='getStop()'>STOP</button>
+                    </div>
+
+                    <!-- TODO 3/14: 
                    <button id="changeFrame" value="4" type="submit" onclick='getFrames()'>CHANGE FRAME</button>
                    <button id="custom" value="5" type="submit" onclick='getCust()'>CUSTOMIZE</button>
                    -->
-                <section id="top"><a href="#headline">Go To Top <span>&#94;</span></a></section>
-            </secton>
+                </secton>
+            </div>
 
-            <footer id="page-bottom">Created by: Stephanie Miranda - smirand6@asu.edu | March 14, 2020 |
-                <a href="https://www.thestephaniemiranda.com">Personal Website</a>
-            </footer>
+            <div class="container-fluid" id="bott">
+                <section id="top"><a href="#headline">Go To Top <span>&#94;</span></a></section>
+
+                <footer id="page-bottom">Created by: Stephanie Miranda - smirand6@asu.edu | March 14, 2020 |
+                    <a href="https://www.thestephaniemiranda.com">Personal Website</a>
+                </footer>
+            </div>
         </div>
     </div>
     <script language="javascript" type="application/javascript" src="script.js"></script>
