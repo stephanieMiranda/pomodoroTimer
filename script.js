@@ -17,6 +17,7 @@
      //var timeNow =  (new Date.getTime()/ 1000);//current time
      let times = [twentyFive, fifTeen, ten, five, three];//, timeNow];
      document = "index.html";
+     let timer_on = 0;
 
      /** Onclick action, if STUDY chosen */
      function getStudy(){
@@ -65,12 +66,8 @@
 
      /*A funciton that counts to the seconds with a minute for each minute passed. typically a 4 hour study hall is open.*/
      function pomodoro(study, brk) {
-          //the selected item
-          var std = document.getElementById("study").innerHTML;
-          var brake = document.getElementById("break").innerHTML;
-
-          var minutes = document.getElementById("mins");
-          var secs = document.getElementById("sec");
+          let switchStdy = study;
+          let switchBrk = brk;
 
           var top = document.getElementById("top-section");
           var hrCount = document.getElementById("count3");
@@ -81,51 +78,76 @@
 
           //each second
           let seconds = 6;//61;
+          let oneHour = 60 * 60;//one hour
           interval = setInterval(function() {
                seconds--;
+               oneHour--;
                let brkCounter = brk * seconds;
                let stdCounter = study * seconds;//the minutes in hour
-               let oneHour = 60 * 60;//one hour
-               if(hour != -1){
-                    //hour = hour - oneHour;
-                    //hour -= 1;
-                    /*After 1 hour, decrement this number*/
-                    if(study != -1){
-                         //minutes.innerHTML = study;
-                         if(seconds == -1){
-                              //study -= 1;
-                              //minCount.innerHTML = stdCounter/study;
-                              //pomodoro(study, brk);
-                         }else{
+               if(timer_on){
+                    if(oneHour != -1){
+                         /*After 1 hour, decrement this number*/
+                         if(study != -1){
                               hrCount.innerHTML = hour;
                               minCount.innerHTML = study;
                               secCount.innerHTML = brkCounter/brk;
-                              //pomodoro(study, brk);
+                              seconds.innerHTML = secCount;
+                              //top.appendChild(secCount);
+                              if(!seconds){
+                                   clearInterval(interval);
+                                   study -= 1;
+                                   console.log(hour + " " + brk + " " + " " + seconds + " oneHour: " + oneHour);
+                                   //alert("You made it through the timer! Now go make one for breaks!")
+                                   pomodoro(study, brk);
+                              }
+                         }else{
+                              //do something with the frame, and/or switch the frame image. 
+                              //document.getElementsByTagName("body").setAttribute("background-color", magenta);
+                              console.log("switch to break timer");
+                              console.log(switchStdy + " " + switchBrk);
+                              getSwitch();
                          }
-                         //console.log(seconds);
-                         //top.innerHTML = minCount;
-                         //top.innerHTML = secCount;
+
+                    } else {
+                         hour -= 1;
+                         hrCount.innerHTML = hour;
+                    }
+          /*} else{
+               if(oneHour != -1){
+                    /*After 1 hour, decrement this number
+                    if(study != -1){
+                         hrCount.innerHTML = hour;
+                         minCount.innerHTML = study;
+                         secCount.innerHTML = brkCounter/brk;
                          seconds.innerHTML = secCount;
                          //top.appendChild(secCount);
                          if(!seconds){
                               clearInterval(interval);
                               study -= 1;
                               //do something with the frame, and/or switch the frame image. 
-                              //document.getElementById("frame").setAttribute("clock", );
+                              //document.getElementsByTagName("body").setAttribute("background-color", magenta);
                               console.log(hour + " " + brk + " " + " " + seconds + " oneHour: " + oneHour);
                               //alert("You made it through the timer! Now go make one for breaks!")
                               pomodoro(study, brk);
                          }
                     }else{
                          console.log("switch to break timer");
+                         console.log(switchStdy + " " + switchBrk);
+                         thingie = false;
+                         getStart();
                     }
 
-               }
-               
+               } else {
+                    hour -= 1;
+                    hrCount.innerHTML = hour;
+               } */
+
+          }          
           }, 1000)
      }
 
      function getStart(){
+          timer_on = 1;
           var std = document.getElementById("study").childNodes;
           var brk = document.getElementById("break").childNodes;
           var opt = document.getElementsByTagName("option");
@@ -143,7 +165,7 @@
                     stdMin = std[i].value;
                     console.log("study SELECTED: " + stdMin);
                     for(j = 0; j < brk.length; j++){
-                         brkMin = brk[i].value;
+                         brkMin = brk[j].value;
                          console.log("break SELECTED: " + brkMin);
                     }
                }
@@ -151,7 +173,45 @@
           pomodoro(stdMin, brkMin);
      }
 
+     function getSwitch() {
+          var std = document.getElementById("study").childNodes;
+          var brk = document.getElementById("break").childNodes;
+          var opt = document.getElementsByTagName("option");
+          var stdMin = 0;
+          var brkMin = 0;
 
-     
+          //These would be defualt times of 25 stdy and 5 brk
+          //console.log("IN START \nstdy: " + std[0].value);
+          //console.log("break: " + brk[0].value);
+          console.log("selected length: " + std.length);
+          for(i = 0; i < std.length; i++){
+               if(!(std[i].selected)){
+                    console.log("NOT SELECTED")
+               }else{
+                    stdMin = std[i].value;
+                    console.log("study SELECTED: " + stdMin);
+                    for(j = 0; j < brk.length; j++){
+                         brkMin = brk[j].value;
+                         console.log("break SELECTED: " + brkMin);
+                    }
+               }
+          }
+          pomodoro(brkMin, stdMin);
 
+     }
+
+     function getStop() {
+          console.log("STOP clicked");
+          timer_on = 0;
+          var std = document.getElementById("study").childNodes;
+          var brk = document.getElementById("break").childNodes;
+          var opt = document.getElementsByTagName("option");
+          var stdMin = 0;
+          var brkMin = 0;
+          
+          stdMin = document.getElementById("count4").innerHTML;
+          brkMin = document.getElementById("count5").innerHTML;
+          pomodoro(brkMin, stdMin);
+          pomodoro(brkMin, stdMin);
+     }
  //});
