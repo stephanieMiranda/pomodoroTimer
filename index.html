@@ -33,38 +33,40 @@
         </ul>
     </nav>
 
-    <section class="app-frame" id="frame">
-        <section class="clock" id="clock">
-            <!-- This section will house the timers clock, here you'll see the numbers go up, reset, etc.-->
-            <div class="clock-box">
-                <span id="hours"></span>
-                <span id="mins"></span>
-                <span id="secs"></span>
-            </div>
-        </section>
+    <div class="app-frame" id="frame">
 
-        <secton class="btn-grp" id="choices">
-            <!-- Need buttons for study, break, change frame, custom timer(s) -->
-            <!-- Here we'll put a series of buttons that execute the required functions of this app.-->
-            <span id="btn-group">
-               <select id="study" value="0" type="submit" onclick='getStudy()'>
-                    <option>STUDY TIME</option></select>
-               <select id="break" value="1" type="submit" onclick='getBreak()'><option>BREAK TIME</option></select>
-               <button id="start" value="2" type="submit" onclick='getStart()'>START</button>
-               <button id="stop" value="3" type="submit" onclick='getStop()'>STOP</button>
-               <!-- TODO 3/14: 
-               <button id="changeFrame" value="4" type="submit" onclick='getFrames()'>CHANGE FRAME</button>
-               <button id="custom" value="5" type="submit" onclick='getCust()'>CUSTOMIZE</button>
-               -->
-          </span>
-        </secton>
+        <div>
+            <section class="clock" id="top-section">
+                <!-- This section will house the timers clock, here you'll see the numbers go up, reset, etc.-->
+                <div class="clock-box" id="row">
+                    <span class="col-sm-3" id="hours"><h4>HOURS</h4><p id="count0"></p></span>
+                    <span class="col-sm-3" id="mins"><h4>MINUTES</h4><p id="count1"></p></span>
+                    <span class="col-sm-3" id="sec"><h4>SECONDS</h4><p id="count2"></p></span>
+                </div>
+            </section>
 
-        <section id="top"><a href="#headline">Go To Top <span>&#94;</span></a></section>
+            <secton class="btn-grp" id="choices">
+                <!-- Here we'll put a series of buttons that execute the required functions of this app.-->
+                <span id="btn-group">
+                   <select id="study" value="0" type="submit" onclick='getStudy()'>
+                        <option>STUDY TIME</option></select>
+                   <select id="break" value="1" type="submit" onclick='getBreak()'><option>BREAK TIME</option></select>
+                   <button id="start" value="2" type="submit" onclick='getStart()'>START</button>
+                   <button id="stop" value="3" type="submit" onclick='getStop()'>STOP</button>
+                   <!-- TODO 3/14: 
+                   <button id="changeFrame" value="4" type="submit" onclick='getFrames()'>CHANGE FRAME</button>
+                   <button id="custom" value="5" type="submit" onclick='getCust()'>CUSTOMIZE</button>
+                   -->
+              </span>
+
+                <section id="top"><a href="#headline">Go To Top <span>&#94;</span></a></section>
+            </secton>
+        </div>
 
         <footer id="page-bottom">Created by: Stephanie Miranda - smirand6@asu.edu | March 14, 2020 |
             <a href="https://www.thestephaniemiranda.com">Personal Website</a>
         </footer>
-    </section>
+    </div>
 
     <script language="javascript" type="application/javascript" src="script.js"></script>
     <!--

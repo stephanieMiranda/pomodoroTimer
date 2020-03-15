@@ -68,18 +68,22 @@
           //the selected item
           var std = document.getElementById("study").innerHTML;
           var brk = document.getElementById("break").innerHTML;
+          var obj = Object.keys(mins);
           console.log("In pomodoro stdy: " + std);
           console.log("break: " + brk);
-          console.log("mins: " + Object.keys(mins));
+          console.log("mins: " + mins); 
+          //console.log("mins: " + obj + " \n" + Object.values(mins[0].innerHTML));
 
           //each second
-          let seconds = mins * 60 || 0;
+          let seconds = mins * 60;
           interval = setInterval(function() {
                seconds--;
+               console.log(seconds);
                if(!seconds){
                     clearInterval(interval);
                     //do something with the frame, and/or switch the frame image. 
-                    document.getElementById("frame").setAttribute("clock", );
+                    //document.getElementById("frame").setAttribute("clock", );
+                    console.log(seconds);
                }
           }, 1000)
      }
@@ -88,12 +92,24 @@
           var std = document.getElementById("study").childNodes;
           var brk = document.getElementById("break").childNodes;
           var opt = document.getElementsByTagName("option");
+          var stdMin = 0;
+          var brkMin = 0;
 
           //These would be defualt times of 25 stdy and 5 brk
           //console.log("IN START \nstdy: " + std[0].value);
           //console.log("break: " + brk[0].value);
-          console.log("opt: " + Object.values(mins));
-          pomodoro(std);
+          console.log("selected length: " + std.length);
+          for(i = 0; i < std.length; i++){
+               if(!(std[i].selected)){
+                    console.log("NOT SELECTED")
+               }else{
+                    stdMin = std[i].value;
+                    brkMin = brk[i].value;
+                    console.log("SELECTED: " + stdMin);
+                    console.log("SELECTED: " + brkMin);
+               }
+          }
+          pomodoro(stdMin);
      }
 
 

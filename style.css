@@ -85,21 +85,41 @@ app-frame {
     border-color: magenta;
 }
 
-.clock {
-    background-color: #537172;
-    border-radius: 50px;
+#top-section {
+    background-color: #b0d1d1;
+    border-radius: 8px;
 }
 
 
 /**Animation for transitioning the frame theme*/
 
-.clock,
+clock,
 app-frame,
 btn-grp {
     transition: all .3s ease-in-out;
 }
 
-#clock-box {
-    background-color: #b0d1d1;
+.clock-box {
+    background-color: #537172;
+    text-align: center;
+}
+
+#hours {
+    background-color: #beebff;
+    text-align: center;
+}
+
+#mins {
+    background-color: #beebff;
+    text-align: center;
+}
+
+#sec {
+    background-color: #beebff;
+    text-align: center;
+}
+
+#buttons {
+    background-color: #80a0a0;
     text-align: center;
 }
