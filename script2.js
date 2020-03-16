@@ -233,10 +233,10 @@
                               stdMin = std[i].value;
                               console.log("4 study SELECTED: " + stdMin);
                               for(j = 0; j < brk.length; j++){
+                                   brkMin = brk[j].value;
                                    if(!(brk[j].selected)){
                                         //console.log("NOT SELECTED")
                                    }else{
-                                        brkMin = brk[j].value;
                                         console.log("5 break SELECTED: " + brkMin);
                                    }
                               }
@@ -244,7 +244,7 @@
                     }
                     /**TODO: 3/15 fix logic here. */
                     if(minutesNum === '00' || minutesNum === '0'){
-                         console.log("WE'VE NOW STARTED: " + stdMin + " " + brkMin);
+                         console.log(stdMin + " " + brkMin);
                          console.log("TIMER_ON: " + timer_on);
                          pomodoro(stdMin, brkMin);
                     }else if(seconds <= -1){
