@@ -1,8 +1,15 @@
 ### Pomodoro Timer
 A timer that will allow users to execute the Pomodoro Technique.
 
-Simply clone this repository and open index.html in your preferred browser.
+Simply clone this repository and open index.html in a Google Chrome browser.
 
-** As of 3/16/2020: All menu buttons, except "Bottom," restart your timer (i.e. it's not yet stateful). Also, the STOP button is not working as expected, nor has the HOURS time been tested. **
+***ISSUES TO NOTE As of 3/16/2020:*** 
+- If you click on any of the menu buttons, like "About" it will restart your timer (i.e. it's not yet stateful). 
+- The STOP button is not working as expected, nor has the HOURS time been tested. 
+- At this point you've got one shot to set the timers (study and break), if you want to change it again, just refresh the page.
+- Finally, it is not entirely repsonsive a this point.
 
+I'll be working on this app over the following week preparing it for use for CodeDevils' Virtual Study Hall, in the mean time please know there are flaws, though you're welcome contribute to it!
 
+Thanks! 
+~ Stephanie Miranda
