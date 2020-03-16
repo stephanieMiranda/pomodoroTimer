@@ -1,7 +1,7 @@
 ### Pomodoro Timer
 A timer that will allow users to execute the Pomodoro Technique.
 
-Simply clone this repository and open index.html in a Google Chrome browser.
+Simply clone this repository and open index.html in a Google Chrome browser. Select a time you want to study and set the amount of time you want for a break in the drop downs. When you're ready, hit START.
 
 ***ISSUES TO NOTE As of 3/16/2020:*** 
 - If you click on any of the menu buttons, like "About" it will restart your timer (i.e. it's not yet stateful). 
