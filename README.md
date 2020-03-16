@@ -11,5 +11,11 @@ Simply clone this repository and open index.html in a Google Chrome browser. Sel
 
 I'll be working on this app over the following week preparing it for use for CodeDevils' Virtual Study Hall, in the mean time please know there are flaws, though you're welcome contribute to it!
 
+***Features in the works:***
+- Get the STOP button to work properly.
+- Add a RESET and RESTART button to deal with some of the issues mentioned above.
+- Change the background color to a differnt, bright color at the same time the timer switches from study to break and vice versa.
+- Make a sound at the time the timer switches from study to break and vice versa.
+
 Thanks! 
 ~ Stephanie Miranda
