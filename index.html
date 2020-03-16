@@ -29,7 +29,8 @@
             <li><a href="#page-bottom">Bottom</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Custom Settings</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="./about.html" id="about">About</a></li>
+            <li><a href="./index.html">Home</a></li>
         </ul>
     </nav>
 
@@ -53,15 +54,20 @@
 
             <div class="container-fluid" id="buttons">
                 <secton class="btn-grp" id="choices">
+
+                    <section id="warning">
+                        <p id="warn">** As of 3/16/2020: if you click on any of the menu buttons, like "About" it will restart your timer (i.e. it's not yet stateful.) **</p>
+                    </section>
                     <!-- Here we'll put a series of buttons that execute the required functions of this app.-->
                     <div id="span-grp">
 
                         <select id="study" value="0" type="submit" onclick='getStudy()'><option>STUDY TIME</option></select>
                         <select id="break" value="1" type="submit" onclick='getBreak()'><option>BREAK TIME</option></select>
-                        <button id="start" value="2" type="submit" onclick='getStart()'>START</button>
+                        <button id="start" value="2" type="submit" onclick='checkInput()'>START</button>
                         <button id="stop" value="3" type="submit" onclick='getStop()'>STOP</button>
-                    </div>
+                        <button id="reset" value="4" type="submit" onclick='getReset()'>RESET</button>
 
+                    </div>
                     <!-- TODO 3/14: 
                    <button id="changeFrame" value="4" type="submit" onclick='getFrames()'>CHANGE FRAME</button>
                    <button id="custom" value="5" type="submit" onclick='getCust()'>CUSTOMIZE</button>
@@ -71,7 +77,6 @@
 
             <div class="container-fluid" id="bott">
                 <section id="top"><a href="#headline">Go To Top <span>&#94;</span></a></section>
-
                 <footer id="page-bottom">Created by: Stephanie Miranda - smirand6@asu.edu | March 14, 2020 |
                     <a href="https://www.thestephaniemiranda.com">Personal Website</a>
                 </footer>
@@ -79,56 +84,6 @@
         </div>
     </div>
     <script language="javascript" type="application/javascript" src="script.js"></script>
-    <!--
-    <script>
-        var twentyFive = 25; //25 min
-        var fifTeen = 15; //15 min
-        var ten = 10; //10 min
-        var five = 5; //5 min
-        var three = 3; //3 min
-        var timeNow = (new Date.now().getTime() / 1000); //current time
-        times = {
-            twentyFive,
-            fifTeen,
-            ten,
-            five,
-            three,
-            timeNow
-        };
-
-        /** Onclick action, if 25 study chosen */
-        function getStudy(stdy, brk) {
-            console.log(times);
-            work = stdy;
-            chill = brk;
-            timer = work + chill;
-            //get the pomodoro counting in seconds
-            pomodoro(timer);
-
-            //This is the DOM manipulation
-            var dropDown = document.getElementById("study");
-            for (i = 0; i < repoNums.length; i++) {
-                option += "<option id=\"time" + i + "\" value=\"" + times[i] + "\" onclick=\'pomodoro()\'>" + times[i].name + "</option>";
-                //option.setAttribute("value", i);
-                //console.log(fullRepos[i].name);
-            }
-            dropDown.innerHTML = option;
-        }
-
-        /*A funciton that counts to the seconds with a minute for each minute passed*/
-        function pomodoro(mins) {
-            //each second
-            seconds = mins * 60 || 0;
-            interval = setInterval(function() {
-                        seconds--;
-                        if (!seconds) {
-                            clearInterval(interval);
-                            //do something with the frame, and/or switch the frame image. 
-                            document.getElementById("frame").setAttribute("clock", );
-                        }
-                    },
-    </script>
-    -->
 
 </body>
 

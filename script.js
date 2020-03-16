@@ -192,6 +192,22 @@
           
      }
 
+     /**
+      * A function that ensures there are times selected.
+      */
+     function checkInput(){
+          var std = document.getElementById("study").innerHTML;
+          var brk = document.getElementById("break").innerHTML;
+          console.log("CHECKING std: " + std.value + " brk: " + brk);
+          if(std.includes("STUDY") && brk.includes("BREAK")){
+               alert("Please choose a study time and a break time before starting the timer. Thanks! :)");
+          }else if(std.includes("STUDY") || brk.includes("BREAK")){
+               alert("Please choose a study time AND a break time before starting the timer. Thanks! :)");
+          }else{
+               getStart();
+          }
+     }
+
      function getStart(){
           var stdMin = 0;
           var brkMin = 0;
@@ -323,5 +339,11 @@
           brkMin = document.getElementById("count5").innerHTML;
           console.log("2 " + stdMin + " " + brkMin);
           //pomodoro(stdMin, brkMin);
+     }
+
+     function getReset(){
+          stdMin = document.getElementById("count4").innerHTML;
+          brkMin = document.getElementById("count5").innerHTML;
+          console.log("2 " + stdMin + " " + brkMin);
      }
  //});

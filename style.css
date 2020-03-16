@@ -42,6 +42,24 @@ li a:hover {
     color: black;
 }
 
+
+/*
+a#about {
+    visibility: hidden;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted #5689cc;
+    width: 150px;
+    border-radius: 4px;
+    padding: 10px 0;
+    z-index: 1;
+}
+
+a#about:hover {
+    visibility: visible;
+}
+*/
+
 h1 {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -49,6 +67,24 @@ h1 {
 h3 {
     text-align: inherit;
     font-size: 42px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    text-align: justified;
+    background-color: #beebff;
+    color: black;
+    margin: 20px 20px;
+}
+
+p#warn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: justified;
+    background-color: #8ab9ff;
+    color: black;
+    margin: 20px 20px;
 }
 
 #top {
@@ -141,11 +177,21 @@ span {
     box-shadow: 8px 8px 8px 0px #537172;
 }
 
+#mainSection.container-fluid {
+    background-color: #b0d1d1;
+    text-align: center;
+    width: 95%;
+    height: 350px;
+    margin: 12px 20px;
+    border-radius: 4px;
+    box-shadow: 8px 8px 8px 0px #537172;
+}
+
 #buttons.container-fluid {
     background-color: #8ab9ff;
     text-align: left;
     width: 100%;
-    height: 50px;
+    height: 150px;
     margin: 10px 0px;
     border-radius: 4px;
 }
