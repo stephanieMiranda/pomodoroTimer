@@ -79,7 +79,7 @@
           console.log("2 study: " + study + " brk: " + brk + " timer_on: " + timer_on + " timerSwitch: " + timerSwitch); 
 
           //each second
-          let seconds = 61;//4;//6;//
+          let seconds = 60;//4;//6;//
           let oneHour = 60 * 60;//one hour
           if(timerSwitch == false){
                interval = setInterval(function() {

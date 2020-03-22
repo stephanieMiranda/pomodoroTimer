@@ -1,8 +1,17 @@
-body,
 html {
+    margin: 0px 25px;
+    /*This will be able to be customized.*/
+    background-color: lightgrey;
+    background-image: url("./images/AZ_1.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+body {
     margin: 25px 50px;
     /*This will be able to be customized.*/
     background-color: lightgrey;
+    opacity: 100%;
 }
 
 header {
